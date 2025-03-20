@@ -27,3 +27,19 @@ export const StartResp = z.object({
 	}),
 	hex: Str({ example: "07a-d334ae0" }),
 });
+
+export const ContinueReq = z.object({
+	glucose: Num({ example: 12.2, required: true }),
+	previous: Num({ example: 12.2, required: true }),
+	rate: Num({ example: 2.2, required: true }),
+});
+
+export const ContinueResp = z.object({
+	rate: Str({ example: "3.2ml/hr" }),
+	rateNum: Num({ example: 3.2 }),
+	advice: Obj({
+		type: Str({ example: "additional" }),
+		text: Arr(Str({ example: "Recheck blood glucose in 1 hour." }))
+	}),
+	hex: Str({ example: "1607a07a-c334ef8" }),
+});

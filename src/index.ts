@@ -2,6 +2,7 @@ import { fromHono } from "chanfana";
 import { Hono } from "hono";
 import { Governance } from "./endpoints/governance";
 import { Start } from "./endpoints/start";
+import { Continue } from "./endpoints/continue";
 
 // Start a Hono app
 const app = new Hono();
@@ -44,6 +45,24 @@ openapi.post("/v1/start", Start);
  * @apiError InvalidGovernanceCode API was supplied a missing or invalid governance code which could not be processed
  */
 openapi.post("/v1/check", Governance);
+
+/**
+ * @api {post} /v1/continue Continuing an insulin infusion
+ * @apiName PostContinue
+ * @apiGroup POST
+ * @apiVersion 1.2.3
+ *
+ * @apiParam {Number} glucose Current blood glucose reading (mmol/L)
+ * @apiParam {Number} previous Previous blood glucose reading (mmol/L)
+ * @apiParam {Number} rate Current fast-acting insulin rate (ml/hr)
+ *
+ * @apiSuccess {String} rate Rate to set insulin (including units/hr).
+ * @apiSuccess {Number} rateNum Rate as Number (Float)
+ * @apiSuccess {Object} advice Advice
+ * @apiSuccess {String} advice.type Type of advice
+ * @apiSuccess {String[]} advice.text Line by line advice text
+ * @apiSuccess {String} hex Governance hexcode
+ */openapi.post("/v1/continue", Continue);
 
 // Export the Hono app
 export default app;
