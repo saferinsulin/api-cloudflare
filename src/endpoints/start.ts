@@ -41,12 +41,9 @@ export class Start extends OpenAPIRoute {
 		// Retrieve the validated request body
 		const userData = data.body;
 
-		// Implement your own object insertion here
-    // test governance code: 041-d334909
+		// use calculator module to calculate the rate
     const ins = new calc();
-    console.log({userData});
     const gov = ins.startingRate(userData.glucose); 
-    console.log(gov);
 
 		// return the governance data
 		return {

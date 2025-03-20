@@ -41,12 +41,9 @@ export class Governance extends OpenAPIRoute {
 		// Retrieve the validated request body
 		const governanceCode = data.body;
 
-		// Implement your own object insertion here
-    // test governance code: 041-d334909
+		// parse governance code using calculator module
     const ins = new calc();
-    // console.log({governanceCode});
     const gov = ins.governance(governanceCode.code); 
-    console.log(gov);
 
 		// return the governance data
 		return {
