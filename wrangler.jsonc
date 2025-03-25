@@ -6,6 +6,10 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "nameless-hat-b14e",
 	"main": "src/index.ts",
+	"route": {
+		"pattern": "dev.api.saferinsulin.org/*",
+		"zone_name": "dev.api.saferinsulin.org"
+	},
 	"compatibility_date": "2025-03-17",
 	"observability": {
 		"enabled": true
