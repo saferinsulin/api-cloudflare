@@ -7,8 +7,8 @@
 	"name": "nameless-hat-b14e",
 	"main": "src/index.ts",
 	"route": {
-		"pattern": "dev.api.saferinsulin.org/*",
-		"zone_name": "dev.api.saferinsulin.org"
+		"pattern": "dev.api.saferinsulin.org",
+		"custom_domain": true
 	},
 	"compatibility_date": "2025-03-17",
 	"observability": {
