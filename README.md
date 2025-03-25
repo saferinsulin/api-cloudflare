@@ -6,6 +6,8 @@ This is a version of the SaferInsulin API refactored to use Cloudflare Workers, 
 
 It is a work-in-progress experiment with Cloudflare's ecosystem undertaken at Rewired 2025 and represents four hours of development time to refactor ~80% of the API into this deployment.
 
+Development deployment: [https://dev.api.saferinsulin.org/](https://dev.api.saferinsulin.org/)
+
 TODO:
 
 - /version route
